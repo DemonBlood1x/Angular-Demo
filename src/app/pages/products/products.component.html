@@ -1,0 +1,29 @@
+<mat-form-field class="calentar_container" appearance="fill" >
+  <mat-label>Enter a date range</mat-label>
+  <mat-date-range-input [formGroup]="range" [rangePicker]="picker" >
+    <input matStartDate formControlName="start"  placeholder="Start date" [(ngModel)]="start">
+    <input matEndDate formControlName="end"  placeholder="End date" [(ngModel)]="end">
+  </mat-date-range-input>
+  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-date-range-picker #picker></mat-date-range-picker>
+
+  <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
+  <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
+</mat-form-field>
+
+<section class="products" >
+    <mat-card class="card"
+    *ngFor="let product of products | filtroFecha:start :end">
+      <mat-card-header>
+        <mat-card-title>
+          {{ product.name }}
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+          {{ product.description }}
+      </mat-card-content>
+      <mat-card-content class="calendar" >
+        {{ product.calendar}}
+      </mat-card-content>
+    </mat-card>
+</section>

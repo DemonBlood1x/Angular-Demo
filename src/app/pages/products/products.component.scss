@@ -1,0 +1,30 @@
+section.products {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+margin-top: 20px;
+
+}
+
+
+.calentar_container{
+  position: relative;
+  margin-left: 40%;
+}
+
+
+.card {
+  margin: 5px;
+  min-height: 180px;
+  min-width: 400px;
+  max-width: 400px;
+  height: 100%;
+}
+
+.calendar {
+  float: left;
+  position: relative;
+  top: 30px;
+  left: 70%;
+}
